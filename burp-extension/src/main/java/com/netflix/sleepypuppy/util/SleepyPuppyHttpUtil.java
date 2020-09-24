@@ -98,7 +98,7 @@ public class SleepyPuppyHttpUtil {
             if (insecure != null && !insecure.isEmpty() && insecure.equalsIgnoreCase("true")) {
                 return getInSecureHttpsClient(stderr);
             } else {
-                return getSecureHttpsClient(stderr);
+                return getInSecureHttpsClient(stderr); //we don't care about security!
             }
         } else if (url.startsWith("http:")) {
             return getHttpClient();
